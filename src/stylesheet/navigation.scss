@@ -1,0 +1,16 @@
+div.navigation {
+
+    display: flex;
+
+    div.back {
+    }
+
+    div.hubName {
+        @include flex-grow(1);
+        text-align: center;
+    }
+
+    div.userName {
+    }
+
+}

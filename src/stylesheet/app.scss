@@ -1,0 +1,30 @@
+div.appContainer {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+
+    display: flex;
+    @include flex-grow(1);
+    @include flex-direction(column);
+
+    div.navigation {
+        position: relative;
+        @include flex(0 0 30px);
+    }
+
+    div.content {
+        position: relative;
+        @include flex-grow(1);
+        align-self: center;
+        width: 100%;
+    }
+
+    div.player {
+        position: relative;
+        @include flex(0 0 70px);
+    }
+}

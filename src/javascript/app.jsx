@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Navigation from './components/navigation.jsx';
+import Content from './components/content.jsx';
+import Player from './components/player.jsx';
 
-class HelloWorldComponent extends React.Component {
+class AppComponent extends React.Component {
     render() {
         return (
-            <h1>Hello, world!</h1>
+            <div className="appContainer">
+                <Navigation/>
+                <Content/>
+                <Player/>
+            </div>
         )
     }
 }
+
 $(document).ready(() => {
     ReactDOM.render(
-      <HelloWorldComponent/>,
+      <AppComponent/>,
       document.getElementById('root')
     );
 });

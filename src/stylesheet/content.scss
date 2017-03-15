@@ -1,0 +1,128 @@
+div.content {
+    display: flex;
+    @include flex-direction(row);
+
+    div.playlistContainer {
+        @include flex-grow(1);
+        margin: 10px;
+        color: lighten(black, 60%);
+        font-size: 16px;
+
+        div.currentPlaying {
+            display: flex;
+            @include flex-direction(row);
+
+            div.cover {
+                img {
+                    height: 150px;
+                    width: 150px;
+                    border-radius: 5px;
+                }
+            }
+
+            div.infos {
+                @include flex-grow(1);
+                padding-left: 10px;
+                align-self: center;
+
+                div.title {
+                    color: darken(white, 60%);
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+
+                div.controlls {
+                    margin-top: 25px;
+
+                    button {
+                        width: 80px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        div.restPlaylist {
+            div.item {
+                display: flex;
+                @include flex-direction(row);
+
+                div.cover {
+                    img {
+                        height: 70px;
+                        width: 70px;
+                        border-radius: 3px;
+                    }
+                }
+
+                div.infos {
+                    @include flex-grow(1);
+                    padding-left: 10px;
+                    align-self: center;
+
+                    div.title {
+                        color: darken(white, 60%);
+                        font-weight: 400;
+                        font-size: 20px;
+                    }
+                }
+
+                div.controlls {
+                    text-align: center;
+                    align-self: center;
+
+                    div {
+                        i { margin-top: -10px; }
+
+                        vertical-align: middle;
+                        font-size: 30px;
+                        font-weight: 400;
+                        line-height: 12px;
+                        height: 16px;
+                        cursor: pointer;
+
+                        @include transition(color 0.1s ease-out);
+                    }
+
+                    div.like:hover {
+                        color: green;
+                    }
+
+                    div.dislike:hover {
+                        color: red;
+                    }
+
+                    div.rating {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    div.chatContainer {
+        @include flex(0 0 300px);
+
+        display: flex;
+        @include flex-direction(column);
+
+        div.chatListContainer {
+            @include flex-grow(1);
+        }
+
+        div.messageContainer {
+            @include flex(0 0 50px);
+
+            @include flex-direction(column);
+
+            div.messageBox {
+                box-sizing: border-box;
+            }
+
+            div.sendButton {
+                display: inline-block;
+            }
+        }
+    }
+}

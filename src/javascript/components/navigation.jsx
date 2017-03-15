@@ -4,9 +4,12 @@ export default class Navigation extends React.Component {
     render() {
         return (
             <div className="navigation">
-                <div className="back">1</div>
-                <div className="hubName">2</div>
-                <div className="userName">3</div>
+                <div className="back"><i className="fa fa-chevron-circle-left" aria-hidden="true"></i></div>
+                <div className="hubName">Brave new hub</div>
+                <div className="userNameContainer">
+                    <i className="fa fa-user" aria-hidden="true"></i>
+                    <div className="userName">Ivan Petrov</div>
+                </div>
             </div>
         )
     }

@@ -23,6 +23,8 @@ div.appContainer {
         @include flex-grow(1);
         align-self: center;
         width: 100%;
+
+        overflow: hidden;
     }
 
     div.player {

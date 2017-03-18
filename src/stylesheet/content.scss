@@ -1,16 +1,19 @@
 div.content {
-    display: flex;
-    @include flex-direction(row);
 
     div.playlistContainer {
         @include flex-grow(1);
-        margin: 10px;
         color: lighten(black, 60%);
         font-size: 16px;
+        position: absolute;
+        left: 300px;
+        top: 0;
+        right: 0;
+        height: 100%;
 
         div.currentPlaying {
             display: flex;
             @include flex-direction(row);
+            padding: 0 20px 0 0;
 
             div.cover {
                 img {
@@ -43,9 +46,17 @@ div.content {
         }
 
         div.restPlaylist {
+            padding: 0 8px 10px 0;
+
             div.item {
                 display: flex;
                 @include flex-direction(row);
+                @include transition(color 0.1s ease-out);
+                padding-right: 12px;
+
+                &:hover {
+                    background: darken(white, 5%);
+                }
 
                 div.cover {
                     img {
@@ -101,28 +112,35 @@ div.content {
 
     }
 
-    div.chatContainer {
-        @include flex(0 0 300px);
+    div.panelContainer {
+        width: 300px;
 
-        display: flex;
-        @include flex-direction(column);
+        div.header {
+            display: flex;
+            @include flex-direction(row);
+            justify-content: space-around;
 
-        div.chatListContainer {
-            @include flex-grow(1);
+            div.tab {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid darken(white, 60%);
+                @include transition(all 0.1s ease-out);
+                user-select: none;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: darken(white, 5%);
+                }
+
+                &.selected {
+                    background-color: darken(white, 10%);
+                }
+
+            }
         }
 
-        div.messageContainer {
-            @include flex(0 0 50px);
+        div.body {
 
-            @include flex-direction(column);
-
-            div.messageBox {
-                box-sizing: border-box;
-            }
-
-            div.sendButton {
-                display: inline-block;
-            }
         }
     }
 }
